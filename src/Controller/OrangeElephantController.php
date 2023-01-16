@@ -16,7 +16,7 @@ class OrangeElephantController extends AbstractController
         ]);
     }
 
-    #[Route('/shot/{name}', name: 'shots', methods: ['GET', 'HEAD'])]
+    #[Route('/shot/{name}', name: 'shots', defaults: ['name' => 'degraca'],  methods: ['GET', 'HEAD'])]
     public function get($name): Response
     {
         return $this->json([
