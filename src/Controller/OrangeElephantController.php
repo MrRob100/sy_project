@@ -15,4 +15,12 @@ class OrangeElephantController extends AbstractController
             'controller_name' => 'OrangeElephantController',
         ]);
     }
+
+    #[Route('/shot/{name}', name: 'shots', methods: ['GET', 'HEAD'])]
+    public function get($name): Response
+    {
+        return $this->json([
+            'message' => $name
+        ]);
+    }
 }
